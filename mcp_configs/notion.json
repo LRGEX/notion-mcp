@@ -3,7 +3,6 @@
   "description": "Notion API MCP Server - 33 tools, full Notion API coverage, stateless multi-user auth",
   "transport": "streamable-http",
   "url": "http://YOUR_SERVER_IP:9201/mcp",
-  "sse_url": "http://YOUR_SERVER_IP:9201/sse",
   "auth": "Authorization: Bearer ntn_your_integration_token_here",
   "port": 9201,
   "dependencies": ["mcp>=1.6.0", "notion-client>=3.1.0", "pydantic>=2.0.0"]

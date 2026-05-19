@@ -36,7 +36,8 @@ Server starts on **port 9201**. Verify it's running:
 ```bash
 curl -X POST http://localhost:9201/mcp \
   -H "Content-Type: application/json" \
-  -d '{"jsonrpc":"2.0","method":"initialize","id":1}'
+  -H "Accept: application/json" \
+  -d '{"jsonrpc":"2.0","method":"initialize","params":{"protocolVersion":"2025-03-26","capabilities":{},"clientInfo":{"name":"test","version":"1.0"}},"id":1}'
 ```
 
 Expected response: JSON with `"result"` containing server capabilities.
@@ -52,10 +53,11 @@ Add to `~/.omp/agent/mcp.json` or `.omp/mcp.json`:
   "$schema": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/packages/coding-agent/src/config/mcp-schema.json",
   "mcpServers": {
     "notion": {
-      "type": "sse",
-      "url": "http://YOUR_SERVER_IP:9201/sse",
+      "type": "http",
+      "url": "http://YOUR_SERVER_IP:9201/mcp",
       "headers": {
-        "Authorization": "Bearer ntn_your_integration_token_here"
+        "Authorization": "Bearer ntn_your_integration_token_here",
+        "Accept": "application/json, text/event-stream"
       }
     }
   }
@@ -67,10 +69,9 @@ Replace `ntn_your_integration_token_here` with your actual `ntn_` token from the
 
 ### Claude Desktop / Other MCP Clients
 
-For any MCP client that supports SSE or streamable-http, point it at:
+For any MCP client that supports streamable-http transport, point it at:
 
-- **SSE endpoint**: `http://YOUR_SERVER_IP:9201/sse`
-- **Streamable HTTP endpoint**: `http://YOUR_SERVER_IP:9201/mcp`
+- **Endpoint**: `http://YOUR_SERVER_IP:9201/mcp`
 
 Pass the token in the `Authorization: Bearer ntn_xxx` header.
 
@@ -180,7 +181,7 @@ All tools automatically use the token from the request's `Authorization` header.
 - **Stateless** — no stored tokens, no sessions, no `.env` file
 - **Auth via header** — reads `Authorization: Bearer ntn_xxx` from every request
 - **Multi-user** — different tokens per connection, zero shared state
-- **Transport** — streamable-http (primary) with SSE fallback
+- **Transport** — streamable-http
 - **Framework** — FastMCP from the official `mcp` Python SDK
 - **API client** — `notion-client` v3.1.0 (official Notion async client)
 
