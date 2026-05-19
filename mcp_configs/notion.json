@@ -1,6 +1,6 @@
 {
   "name": "notion",
-  "description": "Notion API MCP Server - 32 tools, full Notion API coverage, stateless multi-user auth",
+  "description": "Notion API MCP Server - 33 tools, full Notion API coverage, stateless multi-user auth",
   "transport": "streamable-http",
   "url": "http://YOUR_SERVER_IP:9201/mcp",
   "sse_url": "http://YOUR_SERVER_IP:9201/sse",

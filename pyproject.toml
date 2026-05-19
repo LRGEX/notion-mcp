@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Notion MCP Server — 33 tools, full Notion API coverage, stateless multi-user auth, streamable-http transport, FastMCP"
 readme = "README.md"
 requires-python = ">=3.13"
-license = "proprietary"
+license = "LicenseRef-Proprietary"
 keywords = ["mcp", "notion", "notion-api", "mcp-server", "fastmcp", "ai-tools", "llm", "claude", "docker", "automation"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -13,7 +13,6 @@ classifiers = [
     "Topic :: Office/Business",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.13",
-    "Framework :: FastMCP",
 ]
 dependencies = [
     "mcp>=1.6.0",

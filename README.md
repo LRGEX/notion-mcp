@@ -88,7 +88,7 @@ Requires Python 3.13+ and [uv](https://docs.astral.sh/uv/):
 git clone https://github.com/LRGEX/notion-mcp.git
 cd notion-mcp
 uv sync
-uv run python -m src.notion_mcp.server
+uv run notion-mcp
 ```
 
 Server starts on `http://0.0.0.0:9201`.
