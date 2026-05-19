@@ -1,0 +1,7 @@
+services:
+  mcp-services:
+    build: .
+    container_name: mcp-services
+    restart: unless-stopped
+    ports:
+      - "9201:9201"

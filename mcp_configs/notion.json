@@ -1,0 +1,13 @@
+{
+  "name": "notion",
+  "description": "Notion API MCP Server providing full Notion API coverage",
+  "module": "src.notion_mcp.server",
+  "command": "uv run python src/notion_mcp/server.py",
+  "environment": {
+    "NOTION_TOKEN": "${NOTION_TOKEN}"
+  },
+  "required": ["NOTION_TOKEN"],
+  "dependencies": ["notion-client", "mcp", "fastmcp", "pydantic"],
+  "ports": [],
+  "health_check": "curl -f http://localhost:8000/health || exit 1"
+}
