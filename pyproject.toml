@@ -1,14 +1,31 @@
 [project]
 name = "notion-mcp"
 version = "0.1.0"
-description = "Notion MCP Server - Full Notion API integration via MCP protocol"
+description = "Notion MCP Server — 32 tools, full Notion API coverage, stateless multi-user auth, streamable-http transport, FastMCP"
 readme = "README.md"
 requires-python = ">=3.13"
+license = "proprietary"
+keywords = ["mcp", "notion", "notion-api", "mcp-server", "fastmcp", "ai-tools", "llm", "claude", "docker", "automation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Office/Business",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Framework :: FastMCP",
+]
 dependencies = [
     "mcp>=1.6.0",
     "notion-client>=3.1.0",
     "pydantic>=2.0.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/LRGEX/notion-mcp"
+Repository = "https://github.com/LRGEX/notion-mcp"
+Issues = "https://github.com/LRGEX/notion-mcp/issues"
+Releases = "https://github.com/LRGEX/notion-mcp/releases"
 
 [project.scripts]
 notion-mcp = "notion_mcp.server:main"
