@@ -226,6 +226,6 @@ notion_mcp/
 | `notion-client` | >=3.1.0 | Official Notion API async client |
 | `pydantic` | >=2.0.0 | Parameter validation |
 
-## License
+## License  Apache-2.0 license
 
 Proprietary — LRGEX. All rights reserved.
