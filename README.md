@@ -2,7 +2,7 @@
 
 **Version 0.1.0**
 
-Stateless MCP server exposing the full Notion API as 32 tools over streamable-http transport. No server-side secrets — each user passes their own Notion integration token via `Authorization` header.
+Stateless MCP server exposing the full Notion API as 33 tools over streamable-http transport. No server-side secrets — each user passes their own Notion integration token via `Authorization` header.
 
 ## Prerequisites
 
@@ -88,14 +88,20 @@ Requires Python 3.13+ and [uv](https://docs.astral.sh/uv/):
 git clone https://github.com/LRGEX/notion-mcp.git
 cd notion-mcp
 uv sync
-uv run python -m notion_mcp.server
+uv run python -m src.notion_mcp.server
 ```
 
 Server starts on `http://0.0.0.0:9201`.
 
-## Tools (32)
+## Tools (33)
 
 All tools automatically use the token from the request's `Authorization` header. No token parameter is needed in any tool call.
+
+### Meta
+
+| Tool | Description |
+|------|-------------|
+| `list_notion_tools` | List all available Notion tools and their descriptions |
 
 ### Search
 
@@ -197,7 +203,7 @@ notion_mcp/
 ├── src/notion_mcp/
 │   ├── __init__.py            # Package metadata
 │   ├── client.py              # create_client(token) — stateless factory
-│   ├── server.py              # FastMCP server — all 32 tool definitions
+│   ├── server.py              # FastMCP server — all 33 tool definitions
 │   └── tools/                 # (unused — tools are inline in server.py)
 │       ├── blocks.py
 │       ├── comments.py
